@@ -34,7 +34,7 @@
 								</form>
 							</td>
 							
-<%-- 							<td><a href="<c:url value="/litico/${litico.id}"/>">Editar</a></td> --%>
+							<td><a href="<c:url value="/litico/${litico.id}"/>">Editar</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

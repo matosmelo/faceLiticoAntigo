@@ -6,6 +6,7 @@ import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.matosmelo.faceLitico.dao.LiticoDAO;
@@ -37,21 +38,36 @@ public class LiticoController {
 	// Adicionando litico
 	@Post("/litico")
 	public void adiciona(Litico litico) {
-//		System.out.println(litico.getNome());
+		// System.out.println(litico.getNome());
 		liticoDAO.salva(litico);
 		result.redirectTo(LiticoController.class).lista();
 	}
-	 // Lista os liticos
+
+	// Lista os liticos
 	@Get("/todosLiticos")
 	public List<Litico> lista() {
 		return liticoDAO.listaLitico();
 	}
-	
+
 	// Deleta litico
 	@Delete("/litico/{id}")
 	public void remove(Long id) {
 		Litico litico = liticoDAO.carrega(id);
 		liticoDAO.remove(litico);
+		result.redirectTo(LiticoController.class).lista();
+	}
+
+	// Edita litico
+	@Get("/litico/{id}")
+	public Litico edita(Long id) {
+		return liticoDAO.carrega(id);
+	}
+
+	// Altera litico
+	@Put("/litico/{litico.id}")
+	public void altera(Litico litico) {
+//		System.out.println(litico.getNome());
+		liticoDAO.atualiza(litico);
 		result.redirectTo(LiticoController.class).lista();
 	}
 }
