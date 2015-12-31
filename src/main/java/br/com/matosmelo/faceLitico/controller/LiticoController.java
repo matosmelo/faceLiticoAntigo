@@ -15,9 +15,8 @@ import br.com.matosmelo.faceLitico.model.Litico;
 @Resource
 public class LiticoController {
 
-	private LiticoDAO liticoDAO;
-
-	private Result result;
+	private final LiticoDAO liticoDAO;
+	private final Result result;
 
 	public LiticoController(LiticoDAO liticoDAO, Result result) {
 		this.liticoDAO = liticoDAO;
@@ -38,7 +37,6 @@ public class LiticoController {
 	// Adicionando litico
 	@Post("/litico")
 	public void adiciona(Litico litico) {
-		// System.out.println(litico.getNome());
 		liticoDAO.salva(litico);
 		result.redirectTo(LiticoController.class).lista();
 	}
@@ -60,13 +58,13 @@ public class LiticoController {
 	// Edita litico
 	@Get("/litico/{id}")
 	public Litico edita(Long id) {
+		System.out.println(id);
 		return liticoDAO.carrega(id);
 	}
 
 	// Altera litico
 	@Put("/litico/{litico.id}")
 	public void altera(Litico litico) {
-//		System.out.println(litico.getNome());
 		liticoDAO.atualiza(litico);
 		result.redirectTo(LiticoController.class).lista();
 	}
