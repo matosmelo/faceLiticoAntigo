@@ -22,7 +22,6 @@
 				<button type="submit" name="_method" value="PUT">Enviar</button>
 			</form>
 			<a href="<c:url value="/todosLiticos"/>">cancelar</a>
-
 		</fieldset>
 	</body>
 </html>

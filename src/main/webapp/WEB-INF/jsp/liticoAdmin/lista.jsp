@@ -7,9 +7,8 @@
 	</head>
 	
 	<body>
-			<span>Lista liticos</span>
-			
-		
+		<span>Lista liticos</span>
+
 		<fieldset>
 			<table>
 				<thead>
@@ -33,14 +32,12 @@
 									<button name="_method" value="DELETE">Remover</button>
 								</form>
 							</td>
-							
 							<td><a href="<c:url value="/litico/${litico.id}"/>">Editar</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-		
-<%-- 			<a href="<c:url value="/novoLitico"/>">Novo Litico</a> --%>
 		</fieldset>
+	<a href="<c:url value="/novoLitico"/>">Novo Litico</a>
 	</body>
 </html>

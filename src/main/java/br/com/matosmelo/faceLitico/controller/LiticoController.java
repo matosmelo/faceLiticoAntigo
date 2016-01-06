@@ -4,7 +4,6 @@ import java.util.List;
 
 import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
-import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
@@ -23,49 +22,15 @@ public class LiticoController {
 		this.result = result;
 	}
 
-	// Teste pagina inicial
-	@Path("/lit")
-	public String litico() {
-		return "PORRAAAAA";
-	}
-
-	// Cria novo litico
-	@Get("/novoLitico")
-	public void novoLitico() {
-	}
-
-	// Adicionando litico
-	@Post("/litico")
-	public void adiciona(Litico litico) {
-		liticoDAO.salva(litico);
-		result.redirectTo(LiticoController.class).lista();
-	}
-
-	// Lista os liticos
-	@Get("/todosLiticos")
-	public List<Litico> lista() {
+	// Lista os liticos home
+	@Get("/litico")
+	public List<Litico> litico() {
 		return liticoDAO.listaLitico();
 	}
-
-	// Deleta litico
-	@Delete("/litico/{id}")
-	public void remove(Long id) {
-		Litico litico = liticoDAO.carrega(id);
-		liticoDAO.remove(litico);
-		result.redirectTo(LiticoController.class).lista();
-	}
-
-	// Edita litico
-	@Get("/litico/{id}")
-	public Litico edita(Long id) {
-		System.out.println(id);
+	// Visualiza unico litico
+	@Get("/{id}")
+	public Litico visualiza(Long id) {
 		return liticoDAO.carrega(id);
 	}
 
-	// Altera litico
-	@Put("/litico/{litico.id}")
-	public void altera(Litico litico) {
-		liticoDAO.atualiza(litico);
-		result.redirectTo(LiticoController.class).lista();
-	}
 }
