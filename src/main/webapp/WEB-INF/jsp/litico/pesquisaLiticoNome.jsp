@@ -3,12 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Visualiza Litico</title>
+		<title>Visualiza Litico na busca por nome</title>
 	</head>
 	
 	<body>
 		<fieldset>
-			<legend>Visualiza Litico</legend>
+			<legend>Visualiza Litico na busca por nome</legend>
 			<tr>
 				<td>${litico.nome}</td>
 				<td>${litico.cargo}</td>
@@ -18,9 +18,5 @@
 				<td>${litico.localFisicoTabalho}</td>
 			</tr>
 		</fieldset>
-		<fieldset>
-			LOCAL A BUSCA DE NOTICIAS
-		</fieldset>
-		<a href="<c:url value="/litico"/>">Voltar</a>
 	</body>
 </html>

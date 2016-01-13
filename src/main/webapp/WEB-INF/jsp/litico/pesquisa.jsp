@@ -8,19 +8,11 @@
 	
 	<body>
 		<fieldset>
-			<legend>Visualiza Litico</legend>
-			<tr>
-				<td>${litico.nome}</td>
-				<td>${litico.cargo}</td>
-				<td>${litico.partido}</td>
-				<td>${litico.estado}</td>
-				<td>${litico.cidade}</td>
-				<td>${litico.localFisicoTabalho}</td>
-			</tr>
+			<legend>Pequisa Litico</legend>
+			<form method="POST">
+				<input id="nome" type="text" name="nome"  value="<c:out value="/pesquisa/${litico.name}"/>"/>
+				<button type="submit" value="Search">Pesquisar</button>
+			</form>
 		</fieldset>
-		<fieldset>
-			LOCAL A BUSCA DE NOTICIAS
-		</fieldset>
-		<a href="<c:url value="/litico"/>">Voltar</a>
 	</body>
 </html>

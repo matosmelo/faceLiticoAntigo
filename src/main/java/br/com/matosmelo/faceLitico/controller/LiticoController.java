@@ -32,5 +32,15 @@ public class LiticoController {
 	public Litico visualiza(Long id) {
 		return liticoDAO.carrega(id);
 	}
+	// Pesquisa litico
+	@Get("/pesquisa")
+	public void pesquisa() {
+	}
+	// Pesquisa litico por nome
+	@Post("/pesquisa/{nome}")
+	public Litico pesquisaLiticoNome(String nome) {
+		return liticoDAO.carregaNome(nome);
+	}
+	
 
 }
