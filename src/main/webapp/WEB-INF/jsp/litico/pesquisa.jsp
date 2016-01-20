@@ -9,10 +9,11 @@
 	<body>
 		<fieldset>
 			<legend>Pequisa Litico</legend>
-			<form method="POST">
-				<input id="nome" type="text" name="nome"  value="<c:out value="/pesquisa/${litico.name}"/>"/>
-				<button type="submit" value="Search">Pesquisar</button>
-			</form>
+				<form action="<c:url value="/pesquisa/string"/>">
+   					Geral:<input name="string"/>
+   					<button type="submit">Pesquisar</button>
+   				</form>
 		</fieldset>
+		<a href="<c:url value="/litico"/>">Todos os liticos</a>
 	</body>
 </html>

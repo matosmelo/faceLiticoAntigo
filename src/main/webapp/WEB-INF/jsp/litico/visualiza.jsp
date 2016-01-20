@@ -21,6 +21,7 @@
 		<fieldset>
 			LOCAL A BUSCA DE NOTICIAS
 		</fieldset>
-		<a href="<c:url value="/litico"/>">Voltar</a>
+		<a href="<c:url value="/litico"/>">Voltar lista geral</a>
+		<a href="<c:url value="/pesquisa"/>">Realizar pesquisa</a>
 	</body>
 </html>

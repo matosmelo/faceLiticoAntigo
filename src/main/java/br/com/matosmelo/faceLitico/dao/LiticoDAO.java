@@ -39,13 +39,17 @@ public class LiticoDAO {
 		this.session.delete(litico);
 		tx.commit();
 	}
+
 	// Carrega por ID
 	public Litico carrega(Long id) {
 		return (Litico) this.session.get(Litico.class, id);
 	}
-	// Carrega por nome
-	public Litico carregaNome(String nome) {
-		return (Litico) this.session.get(Litico.class, nome);
+
+	@SuppressWarnings("unchecked")
+	public List<Litico> carregaString(String string) {
+		return this.session.createQuery("select litico from Litico as litico where nome= '" + string + "' or partido= '"
+				+ string + "' or cargo= '" + string + "' or cidade= '" + string + "' or estado= '" + string
+				+ "' or localFisicoTabalho= '" + string + "' ").list();
 	}
 
 	public void recarrega(Litico litico) {

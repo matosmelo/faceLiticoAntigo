@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
@@ -36,10 +37,12 @@ public class LiticoController {
 	@Get("/pesquisa")
 	public void pesquisa() {
 	}
-	// Pesquisa litico por nome
-	@Post("/pesquisa/{nome}")
-	public Litico pesquisaLiticoNome(String nome) {
-		return liticoDAO.carregaNome(nome);
+	// Pesquisa litico por nome, partido, cargo, cidade, estado e local de trabalho
+	@Get
+	@Path("/pesquisa/string")
+	public List<Litico> pesquisaLiticoString(String string) {
+		System.out.println(string);
+		return liticoDAO.carregaString(string);
 	}
 	
 
