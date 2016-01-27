@@ -21,28 +21,44 @@
 	<nav class="yellow accent-3 lighten-1" role="navigation">
 	<div class="nav-wrapper container">
 
-		<a id="logo-container" href="index.html" class="brand-logo">Home</a>
+		<a href="<c:url value="/litico"/>" id="logo-container"
+			class="brand-logo">Home</a>
+
+
+		<div class="fixed-action-btn horizontal click-to-toggle"
+			style="bottom: 45px; right: 24px;">
+			<a class="btn-floating btn-large red"> <i
+				class="large mdi-navigation-menu"></i>
+			</a>
+			<ul>
+				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+				<li><a class="btn-floating yellow darken-1"><i
+						class="material-icons">format_quote</i></a></li>
+				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+			</ul>
+		</div>
 
 		<ul class="right hide-on-med-and-down  ">
-			<li><a href="html/membros.html">Membros</a></li>
-			<li><a href="html/pesquisa.html">Pesquisa</a></li>
-			<li><a href="html/instalacoes.html">Instalações</a></li>
-			<li><a href="html/publicacoes.html">Publicações</a></li>
-			<li><a href="html/como.html">Como chegar</a></li>
-			<li><a href="html/links.html">Links</a></li>
-			<li><a href="html/contato.html">Contato</a></li>
-			<li><a href="html/sobre.html">Sobre o Lacifid</a></li>
+
+			<li><a href="<c:url value="/pesquisa"/>">Pesquisa</a></li>
+			<!-- 			<li><a href="html/instalacoes.html">Instalações</a></li> -->
+			<!-- 			<li><a href="html/publicacoes.html">Publicações</a></li> -->
+			<!-- 			<li><a href="html/como.html">Como chegar</a></li> -->
+			<!-- 			<li><a href="html/links.html">Links</a></li> -->
+			<!-- 			<li><a href="html/contato.html">Contato</a></li> -->
+			<li><a href="html/sobre.html">Sobre o FACELITICO</a></li>
 		</ul>
 
 		<ul id="nav-mobile" class="side-nav">
-			<li><a href="html/membros.html">Membros</a></li>
 			<li><a href="html/pesquisa.html">Pesquisa</a></li>
-			<li><a href="html/instalacoes.html">Instalações</a></li>
-			<li><a href="html/publicacoes.html">Publicações</a></li>
-			<li><a href="html/como.html">Como chegar</a></li>
-			<li><a href="html/links.html">Links</a></li>
-			<li><a href="html/contato.html">Contato</a></li>
-			<li><a href="html/sobre.html">Sobre o Lacifid</a></li>
+			<!-- 			<li><a href="html/pesquisa.html">Pesquisa</a></li> -->
+			<!-- 			<li><a href="html/instalacoes.html">Instalações</a></li> -->
+			<!-- 			<li><a href="html/publicacoes.html">Publicações</a></li> -->
+			<!-- 			<li><a href="html/como.html">Como chegar</a></li> -->
+			<!-- 			<li><a href="html/links.html">Links</a></li> -->
+			<!-- 			<li><a href="html/contato.html">Contato</a></li> -->
+			<li><a href="html/sobre.html">Sobre o FACELITICO</a></li>
 		</ul>
 		<a href="#" data-activates="nav-mobile" class="button-collapse"><i
 			class="material-icons">menu</i></a>
@@ -58,15 +74,23 @@
 					<div class="col s12 m6 l4">
 						<div class="card-panel  blue accent-2">
 							<div class="card-content white-text">
-								<ul>
-									<li>${litico.nome}</li>
-									<li>${litico.partido}</li>
-									<li>${litico.estado}</li>
-									<li>${litico.cidade}</li>
-									<li>${litico.localFisicoTabalho}</li>
-									<li><a class="black-text"
-										href="<c:url value="/${litico.id}"/>">Visualiza litico</a></li>
-									<li></li>
+								<table>
+									<tr>
+										<td><img width="80" height="90"
+											src="resources/imagens/felipe.jpg" alt="" class=""></td>
+										<td>
+											<ul>
+												<li>Nome: ${litico.nome}</li>
+												<li>Partido: ${litico.partido}</li>
+												<li>Estado: ${litico.estado}</li>
+												<li>Cidade: ${litico.cidade}</li>
+												<li>Local: ${litico.localFisicoTabalho}</li>
+												<li><a class="black-text"
+													href="<c:url value="/${litico.id}"/>">Visualiza litico</a></li>
+											</ul>
+										</td>
+									</tr>
+								</table>
 								</ul>
 							</div>
 						</div>
