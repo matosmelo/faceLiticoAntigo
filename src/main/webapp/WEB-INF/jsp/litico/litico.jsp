@@ -76,8 +76,9 @@
 							<div class="card-content white-text">
 								<table>
 									<tr>
-										<td><img width="80" height="90"
-											src="resources/imagens/felipe.jpg" alt="" class=""></td>
+<!-- 									class="circle responsive-img" -->
+										<td><img width="70" height="90"
+											src="resources/imagens/felipe.jpg"  ></td>
 										<td>
 											<ul>
 												<li>Nome: ${litico.nome}</li>
