@@ -25,30 +25,33 @@
 			class="brand-logo">Home</a>
 
 
-		<div class="fixed-action-btn horizontal click-to-toggle"
+		<!-- 		Botão de opções -->
+		<div class="fixed-action-btn vertical click-to-toggle "
 			style="bottom: 45px; right: 24px;">
 			<a class="btn-floating btn-large red"> <i
 				class="large mdi-navigation-menu"></i>
 			</a>
 			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+				<!-- 				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li> -->
+				<!-- 				<li><a class="btn-floating yellow darken-1"><i -->
+				<!-- 						class="material-icons">format_quote</i></a></li> -->
+				<li><a class="btn-floating green" href="html/sobre.html"><i
+						class="material-icons">info</i></a></li>
+<!-- 				<li><a class="btn-floating blue" -->
+<%-- 					href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li> --%>
 			</ul>
 		</div>
 
-		<ul class="right hide-on-med-and-down  ">
+		<!-- 		<ul class="right hide-on-med-and-down  "> -->
 
-			<li><a href="<c:url value="/pesquisa"/>">Pesquisa</a></li>
-			<!-- 			<li><a href="html/instalacoes.html">Instalações</a></li> -->
-			<!-- 			<li><a href="html/publicacoes.html">Publicações</a></li> -->
-			<!-- 			<li><a href="html/como.html">Como chegar</a></li> -->
-			<!-- 			<li><a href="html/links.html">Links</a></li> -->
-			<!-- 			<li><a href="html/contato.html">Contato</a></li> -->
-			<li><a href="html/sobre.html">Sobre o FACELITICO</a></li>
-		</ul>
+		<%-- 			<li><a href="<c:url value="/pesquisa"/>">Pesquisa</a></li> --%>
+		<!-- 			<li><a href="html/instalacoes.html">Instalações</a></li> -->
+		<!-- 			<li><a href="html/publicacoes.html">Publicações</a></li> -->
+		<!-- 			<li><a href="html/como.html">Como chegar</a></li> -->
+		<!-- 			<li><a href="html/links.html">Links</a></li> -->
+		<!-- 			<li><a href="html/contato.html">Contato</a></li> -->
+		<!-- 			<li><a href="html/sobre.html">Sobre o FACELITICO</a></li> -->
+		<!-- 		</ul> -->
 
 		<ul id="nav-mobile" class="side-nav">
 			<li><a href="html/pesquisa.html">Pesquisa</a></li>
@@ -66,8 +69,7 @@
 	</nav>
 
 
-	<div class="row blue-text" id="search"
-		style="display: block;">
+	<div class="row blue-text" id="search" style="display: block;">
 
 		<div class="container">
 			<form action="<c:url value="/pesquisa/string"/>">
@@ -77,7 +79,8 @@
 					name="action">
 					Pesquisar <i class="material-icons right">send</i>
 				</button>
-				<a class="waves-effect waves-light btn yellow" href="<c:url value="/litico"/>">Todos os liticos</a>
+				<a class="waves-effect waves-light btn yellow"
+					href="<c:url value="/litico"/>">Todos os liticos</a>
 			</form>
 		</div>
 

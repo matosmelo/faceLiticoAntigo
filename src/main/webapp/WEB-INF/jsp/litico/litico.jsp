@@ -24,31 +24,33 @@
 		<a href="<c:url value="/litico"/>" id="logo-container"
 			class="brand-logo">Home</a>
 
-
-		<div class="fixed-action-btn horizontal click-to-toggle"
+		<!-- 		Botão de opções -->
+		<div class="fixed-action-btn vertical click-to-toggle "
 			style="bottom: 45px; right: 24px;">
 			<a class="btn-floating btn-large red"> <i
 				class="large mdi-navigation-menu"></i>
 			</a>
 			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+				<!-- 				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li> -->
+				<!-- 				<li><a class="btn-floating yellow darken-1"><i -->
+				<!-- 						class="material-icons">format_quote</i></a></li> -->
+				<li><a class="btn-floating green" href="html/sobre.html"><i
+						class="material-icons">info</i></a></li>
+				<li><a class="btn-floating blue"
+					href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li>
 			</ul>
 		</div>
 
-		<ul class="right hide-on-med-and-down  ">
+		<!-- 		<ul class="right hide-on-med-and-down  "> -->
 
-			<li><a href="<c:url value="/pesquisa"/>">Pesquisa</a></li>
-			<!-- 			<li><a href="html/instalacoes.html">Instalações</a></li> -->
-			<!-- 			<li><a href="html/publicacoes.html">Publicações</a></li> -->
-			<!-- 			<li><a href="html/como.html">Como chegar</a></li> -->
-			<!-- 			<li><a href="html/links.html">Links</a></li> -->
-			<!-- 			<li><a href="html/contato.html">Contato</a></li> -->
-			<li><a href="html/sobre.html">Sobre o FACELITICO</a></li>
-		</ul>
+		<%-- 			<li><a href="<c:url value="/pesquisa"/>">Pesquisa</a></li> --%>
+		<!-- 			<li><a href="html/instalacoes.html">Instalações</a></li> -->
+		<!-- 			<li><a href="html/publicacoes.html">Publicações</a></li> -->
+		<!-- 			<li><a href="html/como.html">Como chegar</a></li> -->
+		<!-- 			<li><a href="html/links.html">Links</a></li> -->
+		<!-- 			<li><a href="html/contato.html">Contato</a></li> -->
+		<!-- 			<li><a href="html/sobre.html">Sobre o FACELITICO</a></li> -->
+		<!-- 		</ul> -->
 
 		<ul id="nav-mobile" class="side-nav">
 			<li><a href="html/pesquisa.html">Pesquisa</a></li>
@@ -65,51 +67,29 @@
 	</div>
 	</nav>
 
-
 	<div class="section no-pad-bot" id="index-banner">
 		<div class="container">
 			<br> <br>
-			<div class="row">
+			<div class="row ">
+
 				<c:forEach items="${liticoList}" var="litico">
-					<div class="col s12 m6 l4">
-						<div class="card-panel  blue accent-2">
-							<div class="card-content white-text">
-								<table>
-									<tr>
-<!-- 									class="circle responsive-img" -->
-										<td><img width="70" height="90"
-											src="resources/imagens/felipe.jpg"  ></td>
-										<td>
-											<ul>
-												<li>Nome: ${litico.nome}</li>
-												<li>Partido: ${litico.partido}</li>
-												<li>Estado: ${litico.estado}</li>
-												<li>Cidade: ${litico.cidade}</li>
-												<li>Local: ${litico.localFisicoTabalho}</li>
-												<li><a class="black-text"
-													href="<c:url value="/${litico.id}"/>">Visualiza litico</a></li>
-											</ul>
-										</td>
-									</tr>
-								</table>
-								</ul>
-							</div>
-						</div>
-					</div>
+					<a class="" href="<c:url value="/${litico.id}"/>">
+
+						<ul class="collection z-depth-4">
+
+							<!-- 											 width="70" height="90" -->
+							<li class="collection-item avatar "><img
+								src="resources/imagens/felipe.jpg" alt="" class="circle">
+								<span class="title">${litico.nome}</span>
+								<p>${litico.cargo}/${litico.estado} / ${litico.partido}</p> <!-- 							<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+							</li>
+						</ul>
+					</a>
 				</c:forEach>
 			</div>
-			<a href="<c:url value="/pesquisa"/>">Realizar pesquisa</a>
-
 		</div>
 	</div>
-
-
-
-
-
-
-
-
+	<%-- 			<a href="<c:url value="/pesquisa"/>">Realizar pesquisa</a> --%>
 
 
 
