@@ -90,6 +90,7 @@
 								<li>Estado: ${litico.estado}</li>
 								<li>Cidade: ${litico.cidade}</li>
 								<li>Local: ${litico.localFisicoTabalho}</li>
+								<li>Cargos anteriores: ${litico.cargosAnteriores}</li>
 							</ul>
 							</p>
 

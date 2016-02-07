@@ -23,6 +23,10 @@
 			</br>
 			Cidade:<input id="cidade" type="text" name="litico.cidade" />
 			</br>
+			<input type="hidden" name="litico.noticias.id" value="${litico.id }">
+			<input type="text" name="litico.noticias.nome">
+			<input type="text" name="litico.noticias.texto">
+			</br>
 			<button type="submit">Enviar</button>
 			<button href="<c:url value="/todosLiticos"/>">Cancelar</button>
 		</form>

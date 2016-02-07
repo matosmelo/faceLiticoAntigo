@@ -35,8 +35,8 @@
 					href="<c:url value="/novoLitico"/>"><i class="material-icons">mode_edit</i></a></li>
 				<!-- 				<li><a class="btn-floating yellow darken-1"><i -->
 				<!-- 						class="material-icons">format_quote</i></a></li> -->
-<!-- 				<li><a class="btn-floating green" href="html/sobre.html"><i -->
-<!-- 						class="material-icons">info</i></a></li> -->
+				<!-- 				<li><a class="btn-floating green" href="html/sobre.html"><i -->
+				<!-- 						class="material-icons">info</i></a></li> -->
 				<li><a class="btn-floating blue"
 					href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li>
 			</ul>
@@ -82,8 +82,8 @@
 							<li class="collection-item avatar "><img
 								src="resources/imagens/felipe.jpg" alt="" class="circle">
 								<span class="title">${litico.nome}</span>
-								<p>${litico.cargo}/${litico.estado}/${litico.partido}</p> <a
-								href="#!" class="secondary-content"></a>
+								<p>${litico.cargo}/${litico.estado}/${litico.partido}/${litico.cargosAnteriores}/${litico.noticias}</p>
+								<a href="#!" class="secondary-content"></a>
 								<form action="<c:url value="/litico/${litico.id}"/>"
 									method="POST" class="secondary-content">
 									<button name="_method" value="DELETE">

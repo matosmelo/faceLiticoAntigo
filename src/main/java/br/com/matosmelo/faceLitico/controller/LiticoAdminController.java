@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.matosmelo.faceLitico.dao.LiticoDAO;
 import br.com.matosmelo.faceLitico.model.Litico;
+import br.com.matosmelo.faceLitico.model.Noticias;
 
 @Resource
 public class LiticoAdminController {
@@ -48,11 +49,25 @@ public class LiticoAdminController {
 		result.redirectTo(LiticoAdminController.class).lista();
 	}
 
+	
+	// Edita litico Antido
+//		@Get("/litico/{id}")
+//		public Litico edita(Long id) {
+//			System.out.println(id);
+//			return liticoDAO.carrega(id);
+//		}
+		
 	// Edita litico
 	@Get("/litico/{id}")
-	public Litico edita(Long id) {
+	public void edita(Long id) {
 		System.out.println(id);
-		return liticoDAO.carrega(id);
+		Litico litico = liticoDAO.carrega(id);
+		System.out.println(litico.getNoticias());
+		for (Noticias l:litico.getNoticias())
+			System.out.println(l.getNome());
+		result.include("litico", litico);
+//		List<Noticias> noticias = liticoDAO.carrega();
+//		result.include("noticia", noticias);
 	}
 
 	// Altera litico

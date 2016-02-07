@@ -1,8 +1,14 @@
 package br.com.matosmelo.faceLitico.model;
 
+import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Litico {
@@ -15,6 +21,26 @@ public class Litico {
 	private String localFisicoTabalho;
 	private String estado;
 	private String cidade;
+	private String cargosAnteriores;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "noticias_id")
+	private Collection<Noticias> noticias;
+
+	public Collection<Noticias> getNoticias() {
+		return noticias;
+	}
+
+	public void setNoticias(Collection<Noticias> noticias) {
+		this.noticias = noticias;
+	}
+
+	public String getCargosAnteriores() {
+		return cargosAnteriores;
+	}
+
+	public void setCargosAnteriores(String cargosAnteriores) {
+		this.cargosAnteriores = cargosAnteriores;
+	}
 
 	public String getEstado() {
 		return this.estado;
@@ -35,7 +61,7 @@ public class Litico {
 	public Long getId() {
 		return this.id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}

@@ -81,7 +81,7 @@
 							<li class="collection-item avatar "><img
 								src="resources/imagens/felipe.jpg" alt="" class="circle">
 								<span class="title">${litico.nome}</span>
-								<p>${litico.cargo}/${litico.estado} / ${litico.partido}</p> <!-- 							<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+								<p>${litico.cargo}/${litico.estado} / ${litico.partido}  </p> <!-- 							<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
 							</li>
 						</ul>
 					</a>
