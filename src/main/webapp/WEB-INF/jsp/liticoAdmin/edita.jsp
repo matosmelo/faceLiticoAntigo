@@ -28,7 +28,11 @@
 
 			<button type="submit" name="_method" value="PUT">Enviar</button>
 		</form>
-		Noticias: ${litico.noticias} 
+		<c:forEach items="${litico.noticias}" var="noticia">
+			${noticia.nome}		
+		
+		 
+		</c:forEach>
 		<a href="<c:url value="/todosLiticos"/>">cancelar</a>
 	</fieldset>
 </body>

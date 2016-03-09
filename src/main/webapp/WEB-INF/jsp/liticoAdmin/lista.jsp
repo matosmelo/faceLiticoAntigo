@@ -76,7 +76,7 @@
 				<c:forEach items="${liticoList}" var="litico">
 					<a class="" href="<c:url value="/litico/${litico.id}"/>">
 
-						<ul class="collection z-depth-4">
+						<ul class="collection z-depth-3">
 
 							<!-- 											 width="70" height="90" -->
 							<li class="collection-item avatar "><img
