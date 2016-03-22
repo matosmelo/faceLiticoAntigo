@@ -75,7 +75,7 @@
 
 			<div class="row">
 				<div class="col s12 m19">
-					<div class="card z-depth-4">
+					<div class="card z-depth-1">
 						<div class="card-content black-text ">
 							<div class="card-img center">
 								<img class="responsive-img circle" width="100" height=""
@@ -86,10 +86,11 @@
 						<div class="card-action">
 							<p>
 							<ul>
-								<li>Partido: ${litico.partido}</li>
+								<li>Cargo: ${litico.cargo}</li>
+								<li>Local de trabalho: ${litico.localFisicoTabalho}</li>
 								<li>Estado: ${litico.estado}</li>
 								<li>Cidade: ${litico.cidade}</li>
-								<li>Local: ${litico.localFisicoTabalho}</li>
+								<li>Partido: ${litico.partido}</li>
 								<li>Cargos anteriores: ${litico.cargosAnteriores}</li>
 							</ul>
 							</p>

@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.matosmelo.faceLitico.model.Litico;
+import br.com.matosmelo.faceLitico.model.Noticias;
 
 @Component
 public class NoticiaDAO {
@@ -18,33 +19,34 @@ public class NoticiaDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Litico> listaLitico() {
-		return this.session.createQuery("select litico from Litico as litico").list();
+	public List<Noticias> listaNoticias() {
+		return this.session.createQuery("select litico from Noticias as litico").list();
 	}
 
-	public void salva(Litico litico) {
+	public void salva(Noticias noticia) {
 		Transaction tx = this.session.beginTransaction();
-		session.save(litico);
+		session.save(noticia);
 		tx.commit();
 	}
 
-	public void atualiza(Litico litico) {
-		Transaction tx = session.beginTransaction();
-		this.session.update(litico);
-		tx.commit();
-	}
+	//public void atualiza(Litico litico) {
+		//Transaction tx = session.beginTransaction();
+		//this.session.update(litico);
+		//tx.commit();
+	//}
 
-	public void remove(Litico litico) {
-		Transaction tx = session.beginTransaction();
-		this.session.delete(litico);
-		tx.commit();
-	}
+	//public void remove(Litico litico) {
+		//Transaction tx = session.beginTransaction();
+		//this.session.delete(litico);
+		//tx.commit();
+	//}
 
 	// Carrega por ID
-	public Litico carrega(Long id) {
-		return (Litico) this.session.get(Litico.class, id);
-	}
+	//public Litico carrega(Long id) {
+		//return (Litico) this.session.get(Litico.class, id);
+	//}
 
+	// Obs. Realizar busca só por nome do litico
 	@SuppressWarnings("unchecked")
 	public List<Litico> carregaString(String string) {
 		return this.session.createQuery("select litico from Litico as litico where nome= '" + string + "' or partido= '"
@@ -52,8 +54,8 @@ public class NoticiaDAO {
 				+ "' or localFisicoTabalho= '" + string + "' ").list();
 	}
 
-	public void recarrega(Litico litico) {
-		session.refresh(litico);
-	}
+	//public void recarrega(Litico litico) {
+		//session.refresh(litico);
+	//}
 
 }

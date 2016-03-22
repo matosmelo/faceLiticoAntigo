@@ -103,7 +103,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col l6 s12">
-				<h5 class="white-text">LACIFID</h5>
+				<h5 class="white-text">FaceLitico</h5>
 				<p class="grey-text text-lighten-4">Somos um laboratorio de
 					pesquisa....</p>
 
@@ -112,7 +112,7 @@
 			<div class="col l3 s12">
 				<h5 class="white-text">Relacionados</h5>
 				<ul>
-					<li><a class="white-text" href="#!">USP</a></li>
+					<li><a class="white-text" href="#!">MM</a></li>
 				</ul>
 			</div>
 			<div class="col l3 s12">

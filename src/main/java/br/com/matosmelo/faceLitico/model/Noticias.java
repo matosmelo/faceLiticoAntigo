@@ -3,13 +3,16 @@ package br.com.matosmelo.faceLitico.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Noticias {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String nome;
+	private String tituloNoticia;
+	@OneToOne
+	private Litico litico;
 	private String texto;
 
 	public Long getId() {
@@ -20,12 +23,12 @@ public class Noticias {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public Litico getLitico() {
+		return litico;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setLitico(Litico litico) {
+		this.litico = litico;
 	}
 
 	public String getTexto() {
@@ -34,6 +37,14 @@ public class Noticias {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+	}
+
+	public String getTituloNoticia() {
+		return tituloNoticia;
+	}
+
+	public void setTituloNoticia(String tituloNoticia) {
+		this.tituloNoticia = tituloNoticia;
 	}
 
 }

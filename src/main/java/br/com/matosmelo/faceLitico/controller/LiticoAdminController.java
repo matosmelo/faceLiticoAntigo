@@ -62,9 +62,9 @@ public class LiticoAdminController {
 	public void edita(Long id) {
 		System.out.println(id);
 		Litico litico = liticoDAO.carrega(id);
-		System.out.println(litico.getNoticias());
-		for (Noticias l:litico.getNoticias())
-			System.out.println(l.getNome());
+//		System.out.println(litico.getNoticias());
+//		for (Noticias l:litico.getNoticias())
+//			System.out.println(l.getNome());
 		result.include("litico", litico);
 //		List<Noticias> noticias = liticoDAO.carrega();
 //		result.include("noticia", noticias);
