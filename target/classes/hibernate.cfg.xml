@@ -32,6 +32,7 @@
 
 		<!-- Entidade -->
 		<mapping class="br.com.matosmelo.faceLitico.model.Litico" />
+		<mapping class="br.com.matosmelo.faceLitico.model.Noticias" />
 		<mapping class="br.com.matosmelo.faceLitico.model.Usuario" />
 		<mapping class="br.com.matosmelo.faceLitico.model.Administrador" />
 	</session-factory>
