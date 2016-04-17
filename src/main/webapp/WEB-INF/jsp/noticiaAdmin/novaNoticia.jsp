@@ -24,7 +24,6 @@
 		<a href="<c:url value="/litico"/>" id="logo-container"
 			class="brand-logo">Home</a>
 
-
 		<!-- 		Botão de opções -->
 		<div class="fixed-action-btn vertical click-to-toggle "
 			style="bottom: 45px; right: 24px;">
@@ -32,11 +31,12 @@
 				class="large mdi-navigation-menu"></i>
 			</a>
 			<ul>
-				<!-- 				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li> -->
+				<li><a class="btn-floating red"
+					href="<c:url value="/novoLitico"/>"><i class="material-icons">mode_edit</i></a></li>
 				<!-- 				<li><a class="btn-floating yellow darken-1"><i -->
 				<!-- 						class="material-icons">format_quote</i></a></li> -->
-				<li><a class="btn-floating green" href="html/sobre.html"><i
-						class="material-icons">info</i></a></li>
+				<!-- 				<li><a class="btn-floating green" href="html/sobre.html"><i -->
+				<!-- 						class="material-icons">info</i></a></li> -->
 				<li><a class="btn-floating blue"
 					href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li>
 			</ul>
@@ -68,58 +68,31 @@
 	</div>
 	</nav>
 
-
 	<div class="section no-pad-bot" id="index-banner">
 		<div class="container">
 			<br> <br>
+			<div class="row ">
 
-			<div class="row">
-				<div class="col s12 m19">
-					<div class="card z-depth-1">
-						<div class="card-content black-text ">
-							<div class="card-img center">
-								<img class="responsive-img circle" width="100" height=""
-									src="resources/imagens/felipe.jpg">
-							</div>
-							<p class="center">${litico.nome}</p>
-						</div>
-						<div class="card-action">
-							<p>
-							<ul>
-								<li>Cargo: ${litico.cargo}</li>
-								<li>Local de trabalho: ${litico.localFisicoTabalho}</li>
-								<li>Estado: ${litico.estado}</li>
-								<li>Cidade: ${litico.cidade}</li>
-								<li>Partido: ${litico.partido}</li>
-								<li>Cargos anteriores: ${litico.cargosAnteriores}</li>
-							</ul>
-							</p>
-
-						</div>
-						<div class="card-action">
-							<!-- 							<a href="#">This is a link</a> <a href="#">This is a link</a> -->
-							<fieldset>LOCAL A BUSCA DE NOTICIAS</fieldset>
-							<c:forEach items="${litico.noticias}" var="liticoNoticia">
-								<p>${liticoNoticia.tituloNoticia}</p>
-								<p>${liticoNoticia.texto}</p>
-							</c:forEach>
-						</div>
-					</div>
-				</div>
+				<c:forEach items="${liticoList}" var="litico">
+					<a class="" href="<c:url value="/adicionaNovaNoticia/${litico.id}"/>">
+						<ul class="collection z-depth-1">
+							<!-- 											 width="70" height="90" -->
+							<li class="collection-item avatar "><img
+								src="resources/imagens/felipe.jpg" alt="" class="circle">
+								<span class="title">${litico.nome}</span>
+								<p>${litico.id}</p>
+<!-- 								<a href="#!" class="secondary-content"></a> -->
+<%-- 								<form action="<c:url value="/adicionaNovaNoticia/${litico.id}"/>" --%>
+<!-- 									method="POST" class="secondary-content"> -->
+<!-- 								</form> -->
+						</ul>
+					</a>
+				</c:forEach>
 			</div>
 
-
-
-
-
-			<!-- 			<a class="waves-effect waves-light btn yellow" -->
-			<%-- 				href="<c:url value="/litico"/>">Todos os liticos</a>  --%>
-			<!-- 			<a -->
-			<!-- 				class="btn waves-effect waves-light blue" -->
-			<%-- 				href="<c:url value="/pesquisa"/>">Realizar pesquisa<i --%>
-			<!-- 				class="material-icons right">send</i></a> -->
 		</div>
 	</div>
+
 
 	<div class="container">
 		<br> <br>
@@ -169,6 +142,3 @@
 
 </body>
 </html>
-
-
-

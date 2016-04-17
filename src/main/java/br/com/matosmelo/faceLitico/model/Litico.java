@@ -16,6 +16,8 @@ public class Litico {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private Long positivo;
+	private Long negativo;
 	private String cargo;
 	private String nome;
 	private String partido;
@@ -24,8 +26,23 @@ public class Litico {
 	private String cidade;
 	private String cargosAnteriores;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "noticias_id")
 	private Collection<Noticias> noticias;
+	
+	public Long getPositivo() {
+		return positivo;
+	}
+	
+	public void setPositivo(Long positivo) {
+		this.positivo = positivo;
+	}
+	
+	public Long getNegativo() {
+		return negativo;
+	}
+	
+	public void setNegativo(Long negativo) {
+		this.negativo = negativo;
+	}
 
 	public Collection<Noticias> getNoticias() {
 		return noticias;

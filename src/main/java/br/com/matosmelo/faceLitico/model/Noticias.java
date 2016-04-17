@@ -14,6 +14,44 @@ public class Noticias {
 	@OneToOne
 	private Litico litico;
 	private String texto;
+	private Long positivo;
+	private Long neutro;
+	private Long negativo;
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	private String url;
+	
+	public Long getPositivo() {
+		return positivo;
+	}
+
+	public void setPositivo(Long positivo) {
+		this.positivo = positivo;
+	}
+
+	public Long getNeutro() {
+		return neutro;
+	}
+
+	public void setNeutro(Long neutro) {
+		this.neutro = neutro;
+	}
+
+	public Long getNegativo() {
+		return negativo;
+	}
+
+	public void setNegativo(Long negativo) {
+		this.negativo = negativo;
+	}
+
 
 	public Long getId() {
 		return id;

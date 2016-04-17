@@ -14,32 +14,29 @@ public class Adicionando {
 	public static void main(String[] args) {
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
 		configuration.configure();
-
 		SessionFactory factory = configuration.buildSessionFactory();
 		Session session = factory.openSession();
 
+		// Pego o litico 
 		LiticoDAO liticoDAO = new LiticoDAO(session);
 		Litico litico = new Litico();
-		litico = liticoDAO.carrega((long) 4);
-//		System.out.println(litico.getId());
+		litico = liticoDAO.carrega((long) 2);
 		
+		// Cria a noticia
 		Noticias noticias = new Noticias();
-		noticias.setTituloNoticia("Teste de noticia com adicao em lista");
+		noticias.setTituloNoticia("Teste de noticia com adicao em lista. Agora vaiiii");
 		noticias.setTexto("www.noticia.com.br");
 		noticias.setLitico(litico);
 		
+		// Salva a noticia no banco
 		Transaction tx = session.beginTransaction();
 		session.save(noticias);
 		
-		//Estou tentando adicionar as noticias na lista
-//		Noticias ultimaNoticia = (Noticias) session.get(Noticias.class,(long)12);
-//		System.out.println(litico.getNoticias());
-//		litico.getNoticias().add(ultimaNoticia);
-//		System.out.println(litico.getNoticias());
+		// Adiciona noticia na lista do litico
+		litico.getNoticias().add(noticias);
 		
-		session.save(litico);
 		tx.commit();
-		
+		session.close();
 	}
 
 }
