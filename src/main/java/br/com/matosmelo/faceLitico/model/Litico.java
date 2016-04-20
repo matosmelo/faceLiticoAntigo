@@ -27,6 +27,16 @@ public class Litico {
 	private String cargosAnteriores;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Collection<Noticias> noticias;
+	private String urlRss;
+
+	public String getUrlRss() {
+		return urlRss;
+	}
+
+	public void setUrlRss(String urlRss) {
+		this.urlRss = urlRss;
+	}
+
 	
 	public Long getPositivo() {
 		return positivo;

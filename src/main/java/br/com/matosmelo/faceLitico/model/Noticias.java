@@ -1,5 +1,6 @@
 package br.com.matosmelo.faceLitico.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,8 @@ public class Noticias {
 	private Long positivo;
 	private Long neutro;
 	private Long negativo;
+	@Column(length=1000)
+	private String url;
 	
 	public String getUrl() {
 		return url;
@@ -26,7 +29,6 @@ public class Noticias {
 		this.url = url;
 	}
 
-	private String url;
 	
 	public Long getPositivo() {
 		return positivo;
