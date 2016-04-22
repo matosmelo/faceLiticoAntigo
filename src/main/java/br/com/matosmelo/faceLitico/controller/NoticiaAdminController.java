@@ -69,8 +69,7 @@ public class NoticiaAdminController {
 			Noticias noticias = new Noticias(); 
 			
 			noticias.setTituloNoticia(entry.getKey());
-//			noticias.setUrl(entry.getValue());
-			noticias.setUrl("Textoooo");
+			noticias.setUrl(entry.getValue());
 			noticias.setTexto("Texto");
 			noticias.setNegativo(id);
 			noticias.setPositivo(id);

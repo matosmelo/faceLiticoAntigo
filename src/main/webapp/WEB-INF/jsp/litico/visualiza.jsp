@@ -102,6 +102,7 @@
 							<c:forEach items="${litico.noticias}" var="liticoNoticia">
 								<p>${liticoNoticia.tituloNoticia}</p>
 								<p>${liticoNoticia.texto}</p>
+								<p><a class="btn waves-effect waves-light blue" href="<c:url value="${liticoNoticia.url}"/>">Abrir noticia</a></p>
 							</c:forEach>
 						</div>
 					</div>

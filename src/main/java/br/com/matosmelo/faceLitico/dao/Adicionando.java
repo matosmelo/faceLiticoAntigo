@@ -25,7 +25,7 @@ public class Adicionando {
 		// Cria a noticia
 		Noticias noticias = new Noticias();
 		noticias.setTituloNoticia("Teste de noticia com adicao em lista. Agora vaiiii");
-		noticias.setTexto("www.noticia.com.br");
+		noticias.setUrl("www.noticia.com.br");
 		noticias.setLitico(litico);
 		
 		// Salva a noticia no banco

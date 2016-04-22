@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -18,7 +19,8 @@ public class Noticias {
 	private Long positivo;
 	private Long neutro;
 	private Long negativo;
-	@Column(length=1000)
+	@Lob
+	@Column
 	private String url;
 	
 	public String getUrl() {
