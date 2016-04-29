@@ -2,13 +2,113 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Novo Litico</title>
-	</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<title>Lista geral dos Liticos</title>
+	
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet">
+	<link href="resources/css/materialize.css" type="text/css"
+		rel="stylesheet" media="screen,projection" />
+	<link href="resources/css/style.css" type="text/css" rel="stylesheet"
+	media="screen,projection" />
+</head>
 
 	<body>
+	<nav class="yellow accent-3 lighten-1" role="navigation">
+			<div class="nav-wrapper container">
+	
+			<a href="<c:url value="/litico"/>" id="logo-container"
+				class="brand-logo">Home</a>
+	
+			<!-- 		Botão de opções -->
+			<div class="fixed-action-btn vertical click-to-toggle "
+				style="bottom: 45px; right: 24px;">
+				<a class="btn-floating btn-large red"> <i
+					class="large mdi-navigation-menu"></i>
+				</a>
+				<ul>
+					<!-- <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li> -->
+					<!-- <li><a class="btn-floating yellow darken-1"><i -->
+					<!-- class="material-icons">format_quote</i></a></li> -->
+					<li><a class="btn-floating green" href=""><i class="material-icons">info</i></a></li>
+					<li><a class="btn-floating blue" href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li>
+				</ul>
+			</div>
+			<!-- <ul class="right hide-on-med-and-down  "> -->
+			<%-- <li><a href="<c:url value="/pesquisa"/>">Pesquisa</a></li> --%>
+			<!-- <li><a href="html/instalacoes.html">Instalações</a></li> -->
+			<!-- <li><a href="html/publicacoes.html">Publicações</a></li> -->
+			<!-- <li><a href="html/como.html">Como chegar</a></li> -->
+			<!-- <li><a href="html/links.html">Links</a></li> -->
+			<!-- <li><a href="html/contato.html">Contato</a></li> -->
+			<!-- <li><a href="html/sobre.html">Sobre o FACELITICO</a></li> -->
+			<!-- </ul> -->
+	
+			<ul id="nav-mobile" class="side-nav">
+				<li><a href="html/pesquisa.html">Pesquisa</a></li>
+				<!-- <li><a href="html/pesquisa.html">Pesquisa</a></li> -->
+				<!-- <li><a href="html/instalacoes.html">Instalações</a></li> -->
+				<!-- <li><a href="html/publicacoes.html">Publicações</a></li> -->
+				<!-- <li><a href="html/como.html">Como chegar</a></li> -->
+				<!-- <li><a href="html/links.html">Links</a></li> -->
+				<!-- <li><a href="html/contato.html">Contato</a></li> -->
+				<li><a href="html/sobre.html">Sobre o FACELITICO</a></li>
+			</ul>
+			<a href="#" data-activates="nav-mobile" class="button-collapse"><i
+				class="material-icons">menu</i></a>
+			</div>
+		</nav>
+		
+		
+		<div class="row">
+    <form class="col s12" action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+          <label for="disabled">Disabled</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+    </form>
+  </div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		<legend> Novo litico</legend>
 		<form action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data">
 			Nome:<input id="nome" type="text" name="litico.nome" />
@@ -30,6 +130,53 @@
 			<button type="submit">Enviar</button>
 			<button href="<c:url value="/todosLiticos"/>">Cancelar</button>
 		</form>
+		
+		<div class="container">
+			<br>
+			<br>
+			<div class="section"></div>
+		</div>
+	
+		<footer class="page-footer green">
+			<div class="container">
+				<div class="row">	
+					<div class="col l6 s12">
+						<h5 class="white-text">FaceLitico</h5>
+						<p class="grey-text text-lighten-4">Tentado fazer a diferença na política.</p>
+					</div>
+		
+					<div class="col l3 s12">
+						<h5 class="white-text">Relacionados</h5>
+						<ul>
+							<li>
+								<a class="white-text" href="#!">Monkey Mind</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="col l3 s12">
+						<h5 class="white-text">Acompanhe</h5>
+						<ul>
+							<li><a class="white-text" href="#!">Facebook</a></li>
+							<li><a class="white-text" href="#!">Twitter</a></li>
+	                       <!-- <li><a class="white-text" href="#!">Linkedin</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="footer-copyright">
+				<div class="container">
+					Produzido por 
+					<a class="#000000 black-text text-lighten-3" href="www.monkeymind.com.br">Monkey Mind Co.</a>
+				</div>
+			</div>
+		</footer>
+	
+		<!--  Scripts-->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="resources/js/materialize.js"></script>
+		<script src="resources/js/init.js"></script>
 		
 	</body>
 </html>
