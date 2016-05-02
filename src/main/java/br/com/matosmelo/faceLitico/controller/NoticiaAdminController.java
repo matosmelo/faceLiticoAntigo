@@ -45,29 +45,12 @@ public class NoticiaAdminController {
 		Litico litico = liticoDAO.carrega(id);
 
 		// Parse da pagina do RSS
-		Map<String,String> urlRssTituloLink = parse.listaLinkTitulo(litico.getUrlRss());
-//		List<String> lista1 = new ArrayList();
-//		List<String> lista2 = new ArrayList();
-		
-		//System.out.println(urlRssTituloLink);
-//		for (int i = 0; i < urlRssTituloLink.size()/2; i++) {
-//			lista1.add(urlRssTituloLink.get(i));
-//		}
-//		System.out.println(lista1);
-//		int valor;
-//		valor = 0;
-//		valor = urlRssTituloLink.size()/2;
-//		
-//		for (int i = 0; i < valor; i++) {
-//			lista2.add(urlRssTituloLink.get(i + valor));
-//		}
-//		System.out.println(lista1.size());
-//		System.out.println(lista2.size());
-		
+		Map<String, String> urlRssTituloLink = parse.listaLinkTitulo(litico.getUrlRss());
+
 		// Cria noticia
-		for(Entry<String, String> entry :urlRssTituloLink.entrySet() ) {
-			Noticias noticias = new Noticias(); 
-			
+		for (Entry<String, String> entry : urlRssTituloLink.entrySet()) {
+			Noticias noticias = new Noticias();
+
 			noticias.setTituloNoticia(entry.getKey());
 			noticias.setUrl(entry.getValue());
 			noticias.setTexto("Texto");
@@ -75,19 +58,21 @@ public class NoticiaAdminController {
 			noticias.setPositivo(id);
 			noticias.setNeutro(id);
 			noticias.setLitico(litico);
-			
+
 			noticiaDAO.salva(noticias, litico);
 		}
 
 		result.redirectTo(NoticiaAdminController.class).novaNoticia();
 	}
 
-	// // Lista os liticos
-	// @Get("/todosLiticos")
-	// public List<Litico> lista() {
-	// return liticoDAO.listaLitico();
-	// }
-	//
+	// Lista todas as noticias
+	@Get("/listaTodasNoticias")
+	public List<Noticias> listaTodasNoticias() {
+		System.out.println("Passou no controller");
+		System.out.println(noticiaDAO.listaTodasNoticias());
+		return noticiaDAO.listaTodasNoticias();
+	 }
+
 	// // Deleta litico
 	// @Delete("/litico/{id}")
 	// public void remove(Long id) {

@@ -8,14 +8,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-<title>Editar</title>
+<title>Lista geral dos Liticos</title>
 
 <!-- CSS  -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<link href="../resources/css/materialize.css" type="text/css"
+<link href="resources/css/materialize.css" type="text/css"
 	rel="stylesheet" media="screen,projection" />
-<link href="../resources/css/style.css" type="text/css" rel="stylesheet"
+<link href="resources/css/style.css" type="text/css" rel="stylesheet"
 	media="screen,projection" />
 </head>
 
@@ -64,81 +64,30 @@
 			class="material-icons">menu</i></a>
 	</div>
 	</nav>
-	<div class="container">
-		<div class="row">
-
-
-
-
-
-			<%-- 			<form action="<c:url value="/litico/${litico.id}"/>" method="POST""> --%>
-			<%-- 			<input type="hidden" name="litico.id" value="${litico.id }" />  --%>
-			<%-- 			Nome:<input	id="nome" type="text" name="litico.nome" value="${litico.nome }" /> --%>
-			<%-- 			Cargo:<input id="cargo" type="text" name="litico.cargo"	value="${litico.cargo }" />  --%>
-			<%-- 			Partido:<input id="partido" type="text"	name="litico.partido" value="${litico.partido }" /> Local de --%>
-			<%-- 			trabalho:<input id="localFisicoTabalho" type="text"	name="litico.localFisicoTabalho" value="${litico.localFisicoTabalho}" />  --%>
-			<%-- 			Estado:<input id="estado" type="text" name="litico.estado" value="${litico.estado }" /> --%>
-			<%-- 			Cidade:<input id="cidade" type="text" name="litico.cidade"	value="${litico.cidade }" />  --%>
-			<%-- 			Cargos anteriores:<input id="cargosAnteriores" type="text" name="litico.cargosAnteriores" value="${litico.cargosAnteriores }" /> --%>
-			<%-- 			URL RSS:<input id="urlRss" type="text" name="litico.urlRss" value="${litico.urlRss }" /> --%>
-
-			<!-- 			<button type="submit" name="_method" value="PUT">Enviar</button> -->
-			<!-- 			</form> -->
-
-
-
-			<form class="col s12" action="<c:url value="/litico/${litico.id}"/>"
-				method="POST">
-				<div class="row">
-					<div class="input-field col s6">
-						<input id="nome" type="text" name="litico.nome"
-							value="${litico.nome }" class="validate"> <label
-							for="Nome"></label>
-					</div>
-
-					<div class="input-field col s6">
-						<input id="cargo" type="text" name="litico.cargo"
-							value="${litico.cargo }" class="validate"> <label
-							for="Cargo"></label>
-					</div>
-				</div>
-				<div class="input-field col s6">
-					<input id="localFisicoTrabalho" type="text"
-						name="litico.localFisicoTabalho"
-						value="${litico.localFisicoTabalho }" class="validate"> <label
-						for="Local de Tabalho"></label>
-				</div>
-				<div class="input-field col s6">
-					<input id="partido" type="text" name="litico.partido"
-						value="${litico.partido }" class="validate"> <label
-						for="Partido"></label>
-				</div>
-				<div class="input-field col s6">
-					<input id="estado" type="text" name="litico.estado"
-						value="${litico.estado }" class="validate"> <label
-						for="Estado"></label>
-				</div>
-				<div class="input-field col s6">
-					<input id="cidade" type="text" name="litico.cidade"
-						value="${litico.cidade }" class="validate"> <label
-						for="Cidade"></label>
-				</div>
-		</div>
-		<div class="input-field col s6">
-			<input id="urlRss" type="text" name="litico.urlRss"
-				value="${litico.urlRss }" class="validate"> <label
-				for="Cidade"></label>
-		</div>
-		<button class="btn waves-effect waves-light black" type="submit"
-			name="_method" value="PUT">
-			Enviar<i class="material-icons right">send</i>
-		</button>
-		<a class="btn waves-effect waves-light red"
-			href="<c:url value="/todosLiticos"/>">Cancelar</a>
-		</form>
-	</div>
 	</div>
 
+
+	<!-- 		<legend> Novo litico</legend> -->
+	<%-- 		<form action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data"> --%>
+	<!-- 			Nome:<input id="nome" type="text" name="litico.nome" /> -->
+	<!-- 			</br> -->
+	<!-- 			Cargo:<input id="cargo" type="text" name="litico.cargo" /> -->
+	<!-- 			</br> -->
+	<!-- 			Local fisico de trabalho:<input id="localFisicoTrabalho" type="text" name="litico.localFisicoTabalho" /> -->
+	<!-- 			</br> -->
+	<!-- 			Partido:<input id="partido" type="text" name="litico.partido" /> -->
+	<!-- 			</br> -->
+	<!-- 			Estado:<input id="estado" type="text" name="litico.estado" /> -->
+	<!-- 			</br> -->
+	<!-- 			Cidade:<input id="cidade" type="text" name="litico.cidade" /> -->
+	<!-- 			</br> -->
+	<%-- 			<input type="hidden" name="litico.noticias.id" value="${litico.id }"> --%>
+	<!-- 			<input type="text" name="litico.noticias.nome"> -->
+	<!-- 			<input type="text" name="litico.noticias.texto"> -->
+	<!-- 			</br> -->
+	<!-- 			<button type="submit">Enviar</button> -->
+	<%-- 			<button href="<c:url value="/todosLiticos"/>">Cancelar</button> --%>
+	<!-- 		</form> -->
 
 	<div class="container">
 		<br> <br>

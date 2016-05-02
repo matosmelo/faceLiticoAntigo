@@ -22,6 +22,10 @@ public class NoticiaDAO {
 	public List<Noticias> listaNoticias() {
 		return this.session.createQuery("select litico from Noticias as litico").list();
 	}
+	public List<Noticias> listaTodasNoticias() {
+		String hql = "select litico from Noticias as litico";
+		return session.createQuery(hql).list();
+	}
 
 	public void salva(Noticias noticia, Litico litico) {
 		String hql = "from Noticias n where n.url = :url";

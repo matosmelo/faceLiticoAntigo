@@ -34,7 +34,7 @@
 				<!-- class="material-icons">format_quote</i></a></li> -->
 				<!-- <li><a class="btn-floating green" href="html/sobre.html"><i -->
 				<!-- class="material-icons">info</i></a></li> -->
-				<li><a class="btn-floating blue" href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li>
+<%-- 				<li><a class="btn-floating blue" href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li> --%>
 			</ul>
 		</div>
 
@@ -49,7 +49,7 @@
 		<!-- </ul> -->
 
 		<ul id="nav-mobile" class="side-nav">
-			<li><a href="html/pesquisa.html">Pesquisa</a></li>
+<!-- 			<li><a href="html/pesquisa.html">Pesquisa</a></li> -->
 			<!-- <li><a href="html/pesquisa.html">Pesquisa</a></li> -->
 			<!-- <li><a href="html/instalacoes.html">Instalações</a></li> -->
 			<!-- <li><a href="html/publicacoes.html">Publicações</a></li> -->
@@ -74,7 +74,20 @@
 							<li class="collection-item avatar ">
 								<img src="resources/imagens/felipe.jpg" alt="" class="circle">
 								<span class="title">${litico.nome}</span>
-								<p>${litico.cargo} / ${litico.estado} / ${litico.partido} / ${litico.cargosAnteriores}</p>
+								<p>
+									${litico.cargo} / ${litico.estado} / ${litico.partido} 
+									<c:choose>
+									    <c:when test="${litico.urlRss != null}">
+									        / URL RSS Ok
+									    </c:when>    
+									    <c:otherwise>
+									        / URL RSS Não adicionada 
+									        <br />
+									    </c:otherwise>
+									</c:choose>
+									
+									
+								</p>
 								<a href="#!" class="secondary-content"></a>
 								<form action="<c:url value="/litico/${litico.id}"/>" method="POST" class="secondary-content">
 									<button name="_method" value="DELETE">

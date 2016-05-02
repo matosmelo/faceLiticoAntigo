@@ -31,7 +31,10 @@ public class LiticoAdminController {
 	// Adicionando litico
 	@Post("/litico")
 	public void adiciona(Litico litico) {
-		liticoDAO.salva(litico);
+		// Verifica se o nome esta preenchido antes de salvar
+		if (litico.getNome() != null) {
+			liticoDAO.salva(litico);
+		}
 		result.redirectTo(LiticoAdminController.class).lista();
 	}
 
@@ -60,14 +63,8 @@ public class LiticoAdminController {
 	// Edita litico
 	@Get("/litico/{id}")
 	public void edita(Long id) {
-		System.out.println(id);
 		Litico litico = liticoDAO.carrega(id);
-//		System.out.println(litico.getNoticias());
-//		for (Noticias l:litico.getNoticias())
-//			System.out.println(l.getNome());
 		result.include("litico", litico);
-//		List<Noticias> noticias = liticoDAO.carrega();
-//		result.include("noticia", noticias);
 	}
 
 	// Altera litico

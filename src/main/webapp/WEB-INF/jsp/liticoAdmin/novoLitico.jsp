@@ -35,8 +35,8 @@
 					<!-- <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li> -->
 					<!-- <li><a class="btn-floating yellow darken-1"><i -->
 					<!-- class="material-icons">format_quote</i></a></li> -->
-					<li><a class="btn-floating green" href=""><i class="material-icons">info</i></a></li>
-					<li><a class="btn-floating blue" href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li>
+<!-- 					<li><a class="btn-floating green" href=""><i class="material-icons">info</i></a></li> -->
+<%-- 					<li><a class="btn-floating blue" href="<c:url value="/pesquisa"/>"><i class="material-icons">search</i></a></li> --%>
 				</ul>
 			</div>
 			<!-- <ul class="right hide-on-med-and-down  "> -->
@@ -50,86 +50,82 @@
 			<!-- </ul> -->
 	
 			<ul id="nav-mobile" class="side-nav">
-				<li><a href="html/pesquisa.html">Pesquisa</a></li>
+<!-- 				<li><a href="html/pesquisa.html">Pesquisa</a></li> -->
 				<!-- <li><a href="html/pesquisa.html">Pesquisa</a></li> -->
 				<!-- <li><a href="html/instalacoes.html">Instalações</a></li> -->
 				<!-- <li><a href="html/publicacoes.html">Publicações</a></li> -->
 				<!-- <li><a href="html/como.html">Como chegar</a></li> -->
 				<!-- <li><a href="html/links.html">Links</a></li> -->
 				<!-- <li><a href="html/contato.html">Contato</a></li> -->
-				<li><a href="html/sobre.html">Sobre o FACELITICO</a></li>
+<!-- 				<li><a href="html/sobre.html">Sobre o FACELITICO</a></li> -->
 			</ul>
 			<a href="#" data-activates="nav-mobile" class="button-collapse"><i
 				class="material-icons">menu</i></a>
 			</div>
 		</nav>
+		<div class="container">
+			<div class="row">
+				<form class="col s12" action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data">
+					<div class="row">
+    					<div class="input-field col s6">
+					        <input id="nome" type="text" name="litico.nome"class="validate">
+	       					<label for="Nome">Nome</label>
+	     					</div>
+	     
+	     					<div class="input-field col s6">
+						       <input id="cargo" type="text" name="litico.cargo" class="validate">
+						       <label for="Cargo">Cargo</label>
+     						</div>
+   						</div>
+				    	<div class="input-field col s6">
+				        	<input id="localFisicoTrabalho" type="text" name="litico.localFisicoTabalho" class="validate">
+				       			<label for="Local de Tabalho">Local de Trabalho</label>
+				     	</div>
+					    <div class="input-field col s6">
+				       		<input id="partido" type="text" name="litico.partido" class="validate">
+				       			<label for="Partido">Partido</label>
+				     	</div>
+				   		<div class="input-field col s6">
+				        	<input id="estado" type="text" name="litico.estado" class="validate">
+				       			<label for="Estado">Estado</label>
+				     	</div>
+				     	<div class="input-field col s6">
+				       		<input id="cidade" type="text" name="litico.cidade" class="validate">
+				       			<label for="Cidade">Cidade</label>
+				     	</div>
+				   </div>
+			     	<div class="input-field col s6">
+			       		<input id="urlRss" type="text" name="litico.urlRss" class="validate">
+			       			<label for="Cidade">URL RSS</label>
+			     	</div>
+				   <button class="btn waves-effect waves-light black" type="submit" >Enviar<i class="material-icons right">send</i></button>
+					<a class="btn waves-effect waves-light red" href="<c:url value="/todosLiticos"/>">Cancelar</a>
+				</form>
+			</div>
+		</div>
+	
 		
-		
-		<div class="row">
-    <form class="col s12" action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-    </form>
-  </div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<legend> Novo litico</legend>
-		<form action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data">
-			Nome:<input id="nome" type="text" name="litico.nome" />
-			</br>
-			Cargo:<input id="cargo" type="text" name="litico.cargo" />
-			</br>
-			Local fisico de trabalho:<input id="localFisicoTrabalho" type="text" name="litico.localFisicoTabalho" />
-			</br>
-			Partido:<input id="partido" type="text" name="litico.partido" />
-			</br>
-			Estado:<input id="estado" type="text" name="litico.estado" />
-			</br>
-			Cidade:<input id="cidade" type="text" name="litico.cidade" />
-			</br>
-			<input type="hidden" name="litico.noticias.id" value="${litico.id }">
+<!-- 		<legend> Novo litico</legend> -->
+<%-- 		<form action="<c:url value="/litico"/>" method="POST"  enctype="multipart/form-data"> --%>
+<!-- 			Nome:<input id="nome" type="text" name="litico.nome" /> -->
+<!-- 			</br> -->
+<!-- 			Cargo:<input id="cargo" type="text" name="litico.cargo" /> -->
+<!-- 			</br> -->
+<!-- 			Local fisico de trabalho:<input id="localFisicoTrabalho" type="text" name="litico.localFisicoTabalho" /> -->
+<!-- 			</br> -->
+<!-- 			Partido:<input id="partido" type="text" name="litico.partido" /> -->
+<!-- 			</br> -->
+<!-- 			Estado:<input id="estado" type="text" name="litico.estado" /> -->
+<!-- 			</br> -->
+<!-- 			Cidade:<input id="cidade" type="text" name="litico.cidade" /> -->
+<!-- 			</br> -->
+<%-- 			<input type="hidden" name="litico.noticias.id" value="${litico.id }"> --%>
 <!-- 			<input type="text" name="litico.noticias.nome"> -->
 <!-- 			<input type="text" name="litico.noticias.texto"> -->
-			</br>
-			<button type="submit">Enviar</button>
-			<button href="<c:url value="/todosLiticos"/>">Cancelar</button>
-		</form>
+<!-- 			</br> -->
+<!-- 			<button type="submit">Enviar</button> -->
+<%-- 			<button href="<c:url value="/todosLiticos"/>">Cancelar</button> --%>
+<!-- 		</form> -->
 		
 		<div class="container">
 			<br>

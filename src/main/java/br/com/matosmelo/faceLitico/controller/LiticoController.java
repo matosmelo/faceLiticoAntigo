@@ -7,18 +7,29 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.matosmelo.faceLitico.dao.LiticoDAO;
+import br.com.matosmelo.faceLitico.dao.NoticiaDAO;
 import br.com.matosmelo.faceLitico.model.Litico;
+import br.com.matosmelo.faceLitico.model.Noticias;
 
 @Resource
 public class LiticoController {
 
 	private final LiticoDAO liticoDAO;
 	private final Result result;
-
-	public LiticoController(LiticoDAO liticoDAO, Result result) {
+	private final NoticiaDAO noticiaDAO;
+	
+	public LiticoController(LiticoDAO liticoDAO, Result result, NoticiaDAO noticiaDAO) {
 		this.liticoDAO = liticoDAO;
+		this.noticiaDAO = noticiaDAO;
 		this.result = result;
 	}
+	//Lista as noticias na pagina inicial
+	@Get("/inicio")
+	public void inicio() {
+//		System.out.println("Passou no controller");
+//		System.out.println(noticiaDAO.listaTodasNoticias());
+//		return noticiaDAO.listaTodasNoticias();
+	 }
 
 	// Lista os liticos home
 	@Get("/litico")
